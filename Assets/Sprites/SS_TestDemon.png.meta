@@ -1,12 +1,54 @@
 fileFormatVersion: 2
 guid: 50686fb0a18b26545864fc2885127589
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 6112275299482056517
+    second: SS_TestDemon_0
+  - first:
+      213: 7520290306125270808
+    second: SS_TestDemon_2
+  - first:
+      213: 4080865986703503744
+    second: SS_TestDemon_3
+  - first:
+      213: -635886624635014799
+    second: SS_TestDemon_5
+  - first:
+      213: -4134266338268179226
+    second: SS_TestDemon_7
+  - first:
+      213: -6782363964561381120
+    second: SS_TestDemon_8
+  - first:
+      213: 3509466195958813552
+    second: SS_TestDemon_9
+  - first:
+      213: 8310472225836368619
+    second: SS_TestDemon_12
+  - first:
+      213: 1298774677043621583
+    second: SS_TestDemon_20
+  - first:
+      213: 7351332007086689740
+    second: SS_TestDemon_33
+  - first:
+      213: -1453628613058493063
+    second: SS_TestDemon_35
+  - first:
+      213: 6289912990978021542
+    second: SS_TestDemon_37
+  - first:
+      213: 3304459240393560709
+    second: SS_TestDemon_38
+  - first:
+      213: -4867330885453375352
+    second: SS_TestDemon_39
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -35,13 +77,13 @@ TextureImporter:
     filterMode: -1
     aniso: -1
     mipBias: -100
-    wrapU: -1
-    wrapV: -1
+    wrapU: 1
+    wrapV: 1
     wrapW: -1
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -50,9 +92,9 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -75,13 +117,319 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: SS_TestDemon_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 800
+        width: 400
+        height: 400
+      alignment: 9
+      pivot: {x: 0.49087757, y: 0.053001404}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 547b50b200a23d450800000000000000
+      internalID: 6112275299482056517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SS_TestDemon_2
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1000
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0.3357965, y: 0.8831421}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81f096070307d5860800000000000000
+      internalID: 7520290306125270808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SS_TestDemon_3
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 600
+        width: 400
+        height: 600
+      alignment: 9
+      pivot: {x: 0.39965332, y: 0.7736729}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 081bf695ef522a830800000000000000
+      internalID: 4080865986703503744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SS_TestDemon_5
+      rect:
+        serializedVersion: 2
+        x: 996
+        y: 600
+        width: 400
+        height: 600
+      alignment: 9
+      pivot: {x: 0.39965332, y: 0.785836}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1713535eb70ec27f0800000000000000
+      internalID: -635886624635014799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SS_TestDemon_7
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 600
+        width: 200
+        height: 600
+      alignment: 9
+      pivot: {x: 0.11685791, y: 0.67028534}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e49bac6ba220a6c0800000000000000
+      internalID: -4134266338268179226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SS_TestDemon_8
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 600
+        width: 200
+        height: 600
+      alignment: 9
+      pivot: {x: 0.55473447, y: 0.8284074}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 009a8e2a8e330e1a0800000000000000
+      internalID: -6782363964561381120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SS_TestDemon_9
+      rect:
+        serializedVersion: 2
+        x: 1796
+        y: 600
+        width: 200
+        height: 600
+      alignment: 9
+      pivot: {x: 0.46351075, y: 0.8162441}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 073dd5949e024b030800000000000000
+      internalID: 3509466195958813552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SS_TestDemon_12
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 800
+        width: 200
+        height: 200
+      alignment: 9
+      pivot: {x: 0.5182449, y: 0.8466525}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be20ab8657ab45370800000000000000
+      internalID: 8310472225836368619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SS_TestDemon_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 600
+        height: 800
+      alignment: 9
+      pivot: {x: 0.4148574, y: 0.9652436}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fce257400bc260210800000000000000
+      internalID: 1298774677043621583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SS_TestDemon_33
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 0
+        width: 400
+        height: 600
+      alignment: 9
+      pivot: {x: 0.37228608, y: 0.8953051}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccd8c5ce28d250660800000000000000
+      internalID: 7351332007086689740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SS_TestDemon_35
+      rect:
+        serializedVersion: 2
+        x: 996
+        y: 0
+        width: 400
+        height: 600
+      alignment: 9
+      pivot: {x: 0.3814084, y: 0.88922346}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9750e436a7ca3dbe0800000000000000
+      internalID: -1453628613058493063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SS_TestDemon_37
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 0
+        width: 200
+        height: 600
+      alignment: 9
+      pivot: {x: 0.11685791, y: 0.6520405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a81c573a824a4750800000000000000
+      internalID: 6289912990978021542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SS_TestDemon_38
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 0
+        width: 200
+        height: 600
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5825a6edb2ccbdd20800000000000000
+      internalID: 3304459240393560709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SS_TestDemon_39
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 0
+        width: 195
+        height: 599
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88893401954c37cb0800000000000000
+      internalID: -4867330885453375352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 6c5dc0e5cf41abb49a271595f8194a75
     internalID: 0
     vertices: []
     indices: 
