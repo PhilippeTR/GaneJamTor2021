@@ -237,6 +237,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 61e67f71-d2d6-4e54-b622-89c70b1e8e98
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 98504eb3-4e3c-4f37-8de6-dc9c92f0d063
+    m_ActionName: Player/Punch[/Keyboard/e]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -256,6 +260,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moveActionName: Move
   _jumpActionName: Jump
+  _punchActionName: Punch
 --- !u!114 &6357476527660375759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -283,6 +288,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cc04e7d3bf8683469c997900ca2712e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentEmotion: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!114 &524025590537904777
 MonoBehaviour:
   m_ObjectHideFlags: 0

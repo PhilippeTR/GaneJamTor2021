@@ -6,11 +6,13 @@ public struct Inputs
     public float Horizontal;
     public float Vertical;
     public bool Jump;
+    public bool Punch;
 }
 
 // This script requires thoses components and will be added if they aren't already there
 [RequireComponent(typeof(PlayerInput))]
 [RequireComponent(typeof(CharacterMovement))]
+[RequireComponent(typeof(PlayerEmotions))]
 
 public class PlayerController : MonoBehaviour
 {
@@ -21,14 +23,18 @@ public class PlayerController : MonoBehaviour
     private string _moveActionName = "Move";
     [SerializeField]
     private string _jumpActionName = "Jump";
+    [SerializeField]
+    private string _punchActionName = "Punch";
 
     private PlayerInput _playerInput;
     private CharacterMovement _characterMovement;
+    private PlayerEmotions _playerEmotions;
 
     private void Awake()
     {
         _playerInput = GetComponent<PlayerInput>();
         _characterMovement = GetComponent<CharacterMovement>();
+        _playerEmotions = GetComponent<PlayerEmotions>();
 
         CurrentInputs = new Inputs();
 
@@ -42,6 +48,8 @@ public class PlayerController : MonoBehaviour
         _playerInput.actions[_moveActionName].canceled += OnMove;
 
         _playerInput.actions[_jumpActionName].started += OnJump;
+
+        _playerInput.actions[_punchActionName].started += OnPunch;
     }
 
     private void OnDisable()
@@ -57,6 +65,8 @@ public class PlayerController : MonoBehaviour
         _playerInput.actions[_moveActionName].canceled -= OnMove;
 
         _playerInput.actions[_jumpActionName].started -= OnJump;
+
+        _playerInput.actions[_punchActionName].started -= OnPunch;
     }
 
     // Methods used to update the inputs
@@ -84,6 +94,17 @@ public class PlayerController : MonoBehaviour
                 break;
         }
     }
+
+    private void OnPunch(InputAction.CallbackContext input)
+    {
+
+        float punchValue = input.ReadValue<float>();
+
+        if(punchValue == 1.0f)
+        {
+            CurrentInputs.Punch = true;
+        }
+    }
     #endregion
 
     private void Update()
@@ -93,6 +114,7 @@ public class PlayerController : MonoBehaviour
         {
             //Inputs inputsUsed = CurrentInputs;
             _characterMovement.UpdateInput(CurrentInputs);
+            _playerEmotions.UpdateWithInput(CurrentInputs);
         }
     }
 
@@ -104,5 +126,6 @@ public class PlayerController : MonoBehaviour
     private void ResetNecessaryInputs()
     {
         CurrentInputs.Jump = false;
+        CurrentInputs.Punch = false;
     }
 }
