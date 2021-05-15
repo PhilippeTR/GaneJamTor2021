@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
 
 public enum ObstacleType
 {
@@ -9,17 +6,13 @@ public enum ObstacleType
     Deadly,
     Slowing
 }
-public class ObstacleParent : MonoBehaviour
+
+public abstract class ObstacleParent : MonoBehaviour
 {
     protected ObstacleType type = ObstacleType.Neutral;
  
     public ObstacleType GetObstacleType()
     {
         return type;
-    }
-
-    private void Update()
-    {
-        //transform.position = transform.position + new Vector3(-5, 0, 0) * Time.deltaTime;
     }
 }
