@@ -40,7 +40,11 @@ public class PlayerEmotions : MonoBehaviour
                 
                 foreach (var hitCollider in hitColliders)
                 {
-                    Destroy(hitCollider.gameObject);
+                    ObstacleParent o = hitCollider.GetComponent<ObstacleParent>();
+                    if (o)
+                    {
+                        o.Dispose();
+                    }
                     //Debug.Log(hitCollider.transform.position);
                     break;
                 }
