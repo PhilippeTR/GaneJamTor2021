@@ -13,6 +13,9 @@ public class MoveLeft : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _rigidbody.MovePosition(transform.position + Vector3.left * speed * Time.fixedDeltaTime);
+        if (_rigidbody)
+        {
+            _rigidbody.MovePosition(transform.position + Vector3.left * speed * Time.fixedDeltaTime);
+        }
     }
 }

@@ -16,9 +16,16 @@ public abstract class ObstacleParent : MonoBehaviour
         return type;
     }
 
-    public void Dispose()
+    public void Dispose(bool noFade = false)
     {
-        //Fade out, then dispose
-        Destroy(gameObject);
+        if (noFade)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            //Fade out, then dispose
+            Destroy(gameObject);
+        }
     }
 }
