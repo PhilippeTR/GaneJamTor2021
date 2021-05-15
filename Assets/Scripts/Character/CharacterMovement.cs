@@ -6,7 +6,7 @@ using UnityEngine;
 public class CharacterMovement : MonoBehaviour
 {
     [SerializeField]
-    private float _speed = 10.0f;
+    private float _speed = 600.0f;
 
     [SerializeField]
     private float _jumpHeight = 2.0f;
@@ -58,6 +58,19 @@ public class CharacterMovement : MonoBehaviour
     private void ResetNecessaryInputs()
     {
         _currentInputs.Jump = false;
+    }
+
+    public float GetSpeed()
+    {
+        return _speed;
+    }
+
+    public void SetSpeed(float speed)
+    {
+        if (speed >= .0f)
+        {
+            _speed = speed;
+        }
     }
 
     public void AllowDoubleJump(bool allow)
