@@ -433,6 +433,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NeutralObstacle
       objectReference: {fileID: 0}
+    - target: {fileID: 5581697992792923954, guid: 865f9df7a2966d245841e92b2a57f169, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 741dbb951c06adb4da5fce1832f2ca50, type: 2}
     - target: {fileID: 5581697992792923957, guid: 865f9df7a2966d245841e92b2a57f169, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -451,11 +455,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5581697992792923957, guid: 865f9df7a2966d245841e92b2a57f169, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 16.4
+      value: 11.47
       objectReference: {fileID: 0}
     - target: {fileID: 5581697992792923957, guid: 865f9df7a2966d245841e92b2a57f169, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.6
+      value: -11.2
       objectReference: {fileID: 0}
     - target: {fileID: 5581697992792923957, guid: 865f9df7a2966d245841e92b2a57f169, type: 3}
       propertyPath: m_LocalPosition.z
@@ -642,7 +646,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34a3b690219a2a343987e1dc3aee8ff0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 3
 --- !u!54 &1723747624
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -797,5 +801,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6357476527660375758, guid: 2c61174eaf010bf4d977da3f41fa20cb, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 741dbb951c06adb4da5fce1832f2ca50, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c61174eaf010bf4d977da3f41fa20cb, type: 3}
