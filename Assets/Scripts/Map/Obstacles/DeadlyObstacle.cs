@@ -12,7 +12,12 @@ public class DeadlyObstacle : ObstacleParent
         if(other.CompareTag("Player"))
         {
             Debug.Log("Kill the player");
-            //other.GetComponent<Health>().ModifyHealth(-1);
+            Health playerHealth = other.GetComponent<Health>();
+            if (playerHealth)
+            {
+                playerHealth.ModifyHealth(-1);
+            }
+                
         }
     }
 }
