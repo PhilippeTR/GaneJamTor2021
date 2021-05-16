@@ -17,11 +17,14 @@ public class PlayerEmotions : MonoBehaviour
     private Emotion currentEmotion = Emotion.None;
 
     private CharacterMovement cm;
+
     public Animator animator;
     private bool hasPunchPower = false;
     private bool canPunch = true;
+    public SpriteRenderer punchSprite;
 
     public float speedMultiplier = 1.5f;
+
     public Vector3 sphereOverlapOffset;
     public float sphereOverlapRadius = .8f;
     public LayerMask layerMask;
@@ -30,13 +33,14 @@ public class PlayerEmotions : MonoBehaviour
     {
         cm = GetComponent<CharacterMovement>();
         SetPower();
+        punchSprite.enabled = CanUsePunch();
     }
 
     public void UpdateWithInput(Inputs inputs)
     {
         if(inputs.Punch)
         {
-            if (hasPunchPower && canPunch)
+            if (CanUsePunch())
             {
                 animator.SetTrigger("Punch");
                 Collider[] hitColliders = Physics.OverlapSphere(transform.position + sphereOverlapOffset, sphereOverlapRadius, layerMask);
@@ -52,6 +56,7 @@ public class PlayerEmotions : MonoBehaviour
                     break;
                 }
                 canPunch = false;
+                punchSprite.enabled = CanUsePunch();
                 _ = StartCoroutine(nameof(StartPunchCooldown));
             }
         }
@@ -62,6 +67,7 @@ public class PlayerEmotions : MonoBehaviour
     {
         yield return new WaitForSeconds(5.0f);
         canPunch = true;
+        punchSprite.enabled = CanUsePunch();
     }
 
     public Emotion GetEmotion()
@@ -118,6 +124,11 @@ public class PlayerEmotions : MonoBehaviour
                 break;
         }
         
+    }
+
+    private bool CanUsePunch()
+    {
+        return hasPunchPower && canPunch;
     }
 
     private void OnDrawGizmosSelected()
