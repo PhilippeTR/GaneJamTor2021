@@ -47,6 +47,7 @@ public class DecisionMenu : MonoBehaviour, IHealthSubscriber
     [SerializeField]
     private ScoreManager scoreMan;
 
+    AudioSource audioData;
     [SerializeField]
     private Button onceMoreButton;
 
@@ -59,6 +60,7 @@ public class DecisionMenu : MonoBehaviour, IHealthSubscriber
    // Start is called before the first frame update
    void Start()
     {
+        audioData = GetComponent<AudioSource>();
         PopUpDeath.SetActive(false);
         PopUp.SetActive(false);
         backgroundImg.SetActive(false);
@@ -83,14 +85,13 @@ public class DecisionMenu : MonoBehaviour, IHealthSubscriber
     }
     private void ActivateDeath()
     {
-        //onceMoreButton.enabled = false;
-        //TODO play BOOOO 
+        audioData.Play(1);
         PopUpDeath.SetActive(true);
         backgroundImg.SetActive(true);
         PopUpDeathText.text = "" + scoreMan.GetScore() + " Points!";
     }
     public void ActivateReborn() {
-        //TODO play Hourra
+        audioData.Play(0);
         Debug.Log("REBORN");
         onceMoreButton.interactable = true;
         PopUp.SetActive(true);
