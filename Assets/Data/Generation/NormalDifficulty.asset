@@ -22,57 +22,57 @@ MonoBehaviour:
     MenuSprite: {fileID: -486824488419671482, guid: 674dc6a3999de4845a48b029a1887be0, type: 3}
     Name: Rock
     width: 1
-    InitiallyAvailable: 0
+    InitiallyAvailable: 1
   - Obstacle: {fileID: 5581697992792923952, guid: d8261b2ead322b344abcc4581861548e, type: 3}
     MenuSprite: {fileID: 1766159583090320815, guid: 674dc6a3999de4845a48b029a1887be0, type: 3}
     Name: Rock
     width: 1
-    InitiallyAvailable: 0
+    InitiallyAvailable: 1
   - Obstacle: {fileID: 5581697992792923952, guid: 27d294ea66a1bb74f91f12e1050e4626, type: 3}
     MenuSprite: {fileID: -6688801344798280168, guid: 674dc6a3999de4845a48b029a1887be0, type: 3}
     Name: Rock
     width: 1
-    InitiallyAvailable: 0
+    InitiallyAvailable: 1
   - Obstacle: {fileID: 5581697992792923952, guid: 95e9ba3bc61accd4eb18c65945d8cd89, type: 3}
     MenuSprite: {fileID: 6503097685474726396, guid: 674dc6a3999de4845a48b029a1887be0, type: 3}
     Name: Rock
     width: 1
-    InitiallyAvailable: 0
+    InitiallyAvailable: 1
   - Obstacle: {fileID: 5581697992792923952, guid: d2ca554f412faba4aaa038524457344f, type: 3}
     MenuSprite: {fileID: 3128071892952839311, guid: 674dc6a3999de4845a48b029a1887be0, type: 3}
     Name: Rock
     width: 1
-    InitiallyAvailable: 0
+    InitiallyAvailable: 1
   - Obstacle: {fileID: 5581697992792923952, guid: a6af651a8011bcf4692da965fab1ae41, type: 3}
     MenuSprite: {fileID: 1107125935284552979, guid: 674dc6a3999de4845a48b029a1887be0, type: 3}
     Name: Rock
     width: 1
-    InitiallyAvailable: 0
+    InitiallyAvailable: 1
   - Obstacle: {fileID: 5581697992792923952, guid: dc93e01f324ed9f4b8c937f746846e2f, type: 3}
     MenuSprite: {fileID: 1159423850386242698, guid: 674dc6a3999de4845a48b029a1887be0, type: 3}
     Name: Rock
     width: 1
-    InitiallyAvailable: 0
+    InitiallyAvailable: 1
   - Obstacle: {fileID: 5581697992792923952, guid: da3b408e175a20148975daf5c32b73e9, type: 3}
     MenuSprite: {fileID: -9152978112879291309, guid: 674dc6a3999de4845a48b029a1887be0, type: 3}
     Name: Rock
     width: 1
-    InitiallyAvailable: 0
+    InitiallyAvailable: 1
   - Obstacle: {fileID: 5581697992792923952, guid: 21c6ae78e640dec4c948c7dc0a736e61, type: 3}
     MenuSprite: {fileID: -1782688173277919988, guid: 674dc6a3999de4845a48b029a1887be0, type: 3}
     Name: Rock
     width: 1
-    InitiallyAvailable: 0
+    InitiallyAvailable: 1
   - Obstacle: {fileID: 5581697992792923952, guid: 2f9c5cb181c05fd4398c3ebd651f4467, type: 3}
     MenuSprite: {fileID: -4485197711711321781, guid: 674dc6a3999de4845a48b029a1887be0, type: 3}
     Name: Rock
     width: 1
-    InitiallyAvailable: 0
+    InitiallyAvailable: 1
   - Obstacle: {fileID: 5581697992792923952, guid: 9722e3b3486a74f4695d19512b53cc04, type: 3}
     MenuSprite: {fileID: 4354499900650681859, guid: 674dc6a3999de4845a48b029a1887be0, type: 3}
     Name: Rock
     width: 1
-    InitiallyAvailable: 0
+    InitiallyAvailable: 1
   - Obstacle: {fileID: 5581697992792923952, guid: a9b797c5592ce20478b56b2a2c05a934, type: 3}
     MenuSprite: {fileID: 6730959373296602795, guid: 674dc6a3999de4845a48b029a1887be0, type: 3}
     Name: Table
@@ -148,5 +148,10 @@ MonoBehaviour:
     Name: Spike
     width: 1
     InitiallyAvailable: 0
+  - Obstacle: {fileID: 5581697992792923952, guid: e4ea68166124ed74bb261012f602a898, type: 3}
+    MenuSprite: {fileID: -5909494317697947708, guid: c01658ce0076ff34e9b9f784455d62d9, type: 3}
+    Name: Goat
+    width: 1
+    InitiallyAvailable: 1
   _minObstaclesDistance: 5
   _maxObstaclesDistance: 8
