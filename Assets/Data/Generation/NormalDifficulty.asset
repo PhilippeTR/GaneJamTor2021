@@ -14,16 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _obstacleSettings:
   - Obstacle: {fileID: 5581697992792923952, guid: 865f9df7a2966d245841e92b2a57f169, type: 3}
+    MenuSprite: {fileID: 0}
     Name: Neutral
-    width: 0
+    width: 1
     InitiallyAvailable: 1
   - Obstacle: {fileID: 3496092333127964209, guid: 4607f86f39b3ea84b932eca89623cb76, type: 3}
+    MenuSprite: {fileID: 0}
     Name: Slowing
-    width: 0
+    width: 1
     InitiallyAvailable: 1
   - Obstacle: {fileID: 7834891682423793233, guid: 74da73d0b651fc847ac5402332a028c5, type: 3}
+    MenuSprite: {fileID: 0}
     Name: Deadly
-    width: 0
+    width: 1
     InitiallyAvailable: 1
   _minObstaclesDistance: 5
   _maxObstaclesDistance: 8
