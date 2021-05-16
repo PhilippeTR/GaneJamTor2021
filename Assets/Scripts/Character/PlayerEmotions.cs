@@ -23,6 +23,9 @@ public class PlayerEmotions : MonoBehaviour
     private bool canPunch = true;
     public SpriteRenderer punchSprite;
 
+    public CharacterHeads heads;
+    public SpriteRenderer headSprite;
+
     public float speedMultiplier = 1.5f;
 
     public Vector3 sphereOverlapOffset;
@@ -88,14 +91,22 @@ public class PlayerEmotions : MonoBehaviour
         {
             case Emotion.Happiness:
                 cm.AllowDoubleJump(true);
+                headSprite.sprite = heads.happiness;
                 break;
             case Emotion.Anger:
                 hasPunchPower = true;
+                headSprite.sprite = heads.anger;
                 break;
             case Emotion.Fear:          //Move faster
                 cm.SetSpeed(cm.GetSpeed() * speedMultiplier);
+                headSprite.sprite = heads.fear;
                 break;
             case Emotion.Sadness:       //Second life
+                GetComponent<Health>().ModifyHealth(2);
+                headSprite.sprite = heads.happiness;
+                break;
+            case Emotion.None:
+                headSprite.sprite = heads.emotionless;
                 break;
             default:
                 break;

@@ -983,6 +983,8 @@ MonoBehaviour:
   currentEmotion: 0
   animator: {fileID: 6476632746145002414}
   punchSprite: {fileID: 7573194298781384019}
+  heads: {fileID: 11400000, guid: dcff6d4e9546b2b4c8f5bb3729d06b63, type: 2}
+  headSprite: {fileID: 5028793366394628805}
   speedMultiplier: 1.5
   sphereOverlapOffset: {x: 0, y: 0, z: 0}
   sphereOverlapRadius: 0.8
