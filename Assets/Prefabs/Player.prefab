@@ -965,8 +965,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2004213c8ccdc6c458e71527d42fd53c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 600
-  _jumpHeight: 5
+  _speed: 200
+  _jumpHeight: 3
   _canDoubleJump: 0
   _animator: {fileID: 0}
 --- !u!114 &3899659547549075763
