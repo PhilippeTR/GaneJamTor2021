@@ -33,7 +33,7 @@ public class DecisionMenu : MonoBehaviour, IHealthSubscriber
     private PlayerEmotions pPlayerEmote;
 
     [SerializeField]
-    private int scoreMin;
+    public int scoreMin;
 
     [SerializeField]
     private Health health;
@@ -92,7 +92,6 @@ public class DecisionMenu : MonoBehaviour, IHealthSubscriber
         {
             images[i].sprite = imagesDefault;
         }
-        scoreMan.score = 0;
     }
 
     public void SelectEmotion(int a)
@@ -139,6 +138,7 @@ public class DecisionMenu : MonoBehaviour, IHealthSubscriber
         levelGen.ResetLevel();
         levelGen.GenerateObstacles();
         levelGen.Scroll(true);
+        scoreMan.score = 0;
     }
 
 	public void NotifyHealthChange(Health healthScript, int health)
