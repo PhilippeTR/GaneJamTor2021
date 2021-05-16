@@ -92,21 +92,27 @@ public class PlayerEmotions : MonoBehaviour
             case Emotion.Happiness:
                 cm.AllowDoubleJump(true);
                 headSprite.sprite = heads.happiness;
+                headSprite.color = Color.green;
                 break;
             case Emotion.Anger:
                 hasPunchPower = true;
                 headSprite.sprite = heads.anger;
+                headSprite.color = Color.red;
                 break;
             case Emotion.Fear:          //Move faster
                 cm.SetSpeed(cm.GetSpeed() * speedMultiplier);
                 headSprite.sprite = heads.fear;
+                headSprite.color = Color.magenta;
+                
                 break;
             case Emotion.Sadness:       //Second life
                 GetComponent<Health>().ModifyHealth(2);
                 headSprite.sprite = heads.happiness;
+                headSprite.color = Color.blue;
                 break;
             case Emotion.None:
                 headSprite.sprite = heads.emotionless;
+                headSprite.color = Color.white;
                 break;
             default:
                 break;
