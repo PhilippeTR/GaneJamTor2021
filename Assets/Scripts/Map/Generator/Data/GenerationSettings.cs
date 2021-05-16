@@ -5,6 +5,7 @@ using UnityEngine;
 public struct ObstacleSettings
 {
     public GameObject Obstacle;
+    public Sprite MenuSprite;
     public string Name;
     public float width;
     public bool InitiallyAvailable;

@@ -86,6 +86,8 @@ public class LevelGenerator : MonoBehaviour
     private void GenerateObstacle(int chunkIndex)
     {
         float lastPosition = .0f;
+        int randomObstacleSettingIndex;
+        Transform chunk;
         GameObject obstacle;
 
         while (_chunkLength - lastPosition >= _generationSettings.GetMinObstaclesDistance())
@@ -98,10 +100,15 @@ public class LevelGenerator : MonoBehaviour
             {
                 lastPosition += Random.Range(_generationSettings.GetMinObstaclesDistance(), _generationSettings.GetMaxObstaclesDistance());
             }
-            
-            obstacle = Instantiate(_obstaclesUsed[Random.Range(0, _obstaclesUsed.Count - 1)].Obstacle, _chunks[chunkIndex].transform.position, _chunks[chunkIndex].transform.rotation, _chunks[chunkIndex].transform);
+
+            randomObstacleSettingIndex = Random.Range(0, _obstaclesUsed.Count);
+            chunk = _chunks[chunkIndex].transform;
+
+            obstacle = Instantiate(_obstaclesUsed[randomObstacleSettingIndex].Obstacle, chunk.position, chunk.rotation, chunk);
             obstacle.GetComponent<ObstacleParent>().SetScoreManager(_scoreManager);
-            obstacle.transform.localPosition = transform.right * (lastPosition - _chunkLength / 2.0f) + Vector3.up * _groundOffset;
+            obstacle.transform.localPosition = transform.right * (lastPosition - _chunkLength / 2.0f/* + _obstaclesUsed[randomObstacleSettingIndex].width / 2.0f*/) + Vector3.up * _groundOffset;
+
+            //lastPosition += _obstaclesUsed[randomObstacleSettingIndex].width;
         }
     }
 
