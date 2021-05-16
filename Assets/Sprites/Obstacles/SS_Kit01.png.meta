@@ -1,12 +1,90 @@
 fileFormatVersion: 2
 guid: c01658ce0076ff34e9b9f784455d62d9
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 208523911880407284
+    second: SS_Kit01_0
+  - first:
+      213: 5144333994496540911
+    second: SS_Kit01_1
+  - first:
+      213: 916044272670850973
+    second: SS_Kit01_2
+  - first:
+      213: 8567293704391116203
+    second: SS_Kit01_3
+  - first:
+      213: -5118453612919240452
+    second: SS_Kit01_4
+  - first:
+      213: 4459363393191857739
+    second: SS_Kit01_5
+  - first:
+      213: -7325108427651867462
+    second: SS_Kit01_6
+  - first:
+      213: 7457571379575723336
+    second: SS_Kit01_7
+  - first:
+      213: 4260380032717901870
+    second: SS_Kit01_8
+  - first:
+      213: -2861988994141070987
+    second: SS_Kit01_9
+  - first:
+      213: -2551682778835216591
+    second: SS_Kit01_10
+  - first:
+      213: -2277306571168163450
+    second: SS_Kit01_11
+  - first:
+      213: -13444378780972358
+    second: SS_Kit01_12
+  - first:
+      213: 2944957737777187914
+    second: SS_Kit01_13
+  - first:
+      213: 1608150528811574008
+    second: SS_Kit01_14
+  - first:
+      213: 4388756400277995291
+    second: SS_Kit01_15
+  - first:
+      213: 7269538870615864042
+    second: SS_Kit01_16
+  - first:
+      213: -5509210687998616306
+    second: SS_Kit01_17
+  - first:
+      213: 8167608359401589643
+    second: SS_Kit01_18
+  - first:
+      213: -4195158134465944555
+    second: SS_Kit01_19
+  - first:
+      213: -5909494317697947708
+    second: SS_Kit01_20
+  - first:
+      213: -3692134141846037576
+    second: SS_Kit01_21
+  - first:
+      213: 7621564809282702312
+    second: SS_Kit01_22
+  - first:
+      213: -6411360673174735714
+    second: SS_Kit01_23
+  - first:
+      213: 5151936021298218158
+    second: SS_Kit01_24
+  - first:
+      213: 7320884429846733390
+    second: SS_Kit01_25
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -35,24 +113,24 @@ TextureImporter:
     filterMode: -1
     aniso: -1
     mipBias: -100
-    wrapU: -1
-    wrapV: -1
+    wrapU: 1
+    wrapV: 1
     wrapW: -1
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 340
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -65,7 +143,19 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -77,11 +167,473 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: SS_Kit01_0
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 1000
+        width: 116
+        height: 197
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f87ece9463d4e200800000000000000
+      internalID: 208523911880407284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SS_Kit01_1
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 1000
+        width: 129
+        height: 191
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe0ceeb1388546740800000000000000
+      internalID: 5144333994496540911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SS_Kit01_3
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 801
+        width: 354
+        height: 398
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba54ca09b3425e670800000000000000
+      internalID: 8567293704391116203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SS_Kit01_4
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 798
+        width: 354
+        height: 402
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf842aace8997f8b0800000000000000
+      internalID: -5118453612919240452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SS_Kit01_5
+      rect:
+        serializedVersion: 2
+        x: 1231
+        y: 1000
+        width: 116
+        height: 197
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4ec49f1167d2ed30800000000000000
+      internalID: 4459363393191857739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SS_Kit01_6
+      rect:
+        serializedVersion: 2
+        x: 1416
+        y: 1000
+        width: 129
+        height: 191
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abc1794f1bcf75a90800000000000000
+      internalID: -7325108427651867462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SS_Kit01_8
+      rect:
+        serializedVersion: 2
+        x: 1623
+        y: 801
+        width: 354
+        height: 398
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e20515a3119ef1b30800000000000000
+      internalID: 4260380032717901870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SS_Kit01_9
+      rect:
+        serializedVersion: 2
+        x: 2023
+        y: 798
+        width: 354
+        height: 402
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 579d42d5c2c2848d0800000000000000
+      internalID: -2861988994141070987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SS_Kit01_10
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 800
+        width: 116
+        height: 197
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1379b04380a969cd0800000000000000
+      internalID: -2551682778835216591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SS_Kit01_11
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 800
+        width: 129
+        height: 191
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 689dbdc3db16560e0800000000000000
+      internalID: -2277306571168163450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SS_Kit01_13
+      rect:
+        serializedVersion: 2
+        x: 1231
+        y: 800
+        width: 116
+        height: 197
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4c4fbe95779ed820800000000000000
+      internalID: 2944957737777187914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SS_Kit01_14
+      rect:
+        serializedVersion: 2
+        x: 1416
+        y: 800
+        width: 129
+        height: 191
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f2ab27b26c415610800000000000000
+      internalID: 1608150528811574008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SS_Kit01_16
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 436
+        width: 576
+        height: 321
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae2f3ff461792e460800000000000000
+      internalID: 7269538870615864042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SS_Kit01_17
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 416
+        width: 580
+        height: 355
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0d9e0d711a5b83b0800000000000000
+      internalID: -5509210687998616306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SS_Kit01_18
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 400
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8b84ae678c295170800000000000000
+      internalID: 8167608359401589643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SS_Kit01_19
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 399
+        width: 400
+        height: 401
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 514219257edc7c5c0800000000000000
+      internalID: -4195158134465944555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SS_Kit01_20
+      rect:
+        serializedVersion: 2
+        x: 2025
+        y: 2
+        width: 356
+        height: 795
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c7ac675a324dfda0800000000000000
+      internalID: -5909494317697947708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SS_Kit01_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 563
+        height: 396
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bbdc2c4f87e2ccc0800000000000000
+      internalID: -3692134141846037576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SS_Kit01_22
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 17
+        width: 580
+        height: 356
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ebc9e130dc35c960800000000000000
+      internalID: 7621564809282702312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SS_Kit01_23
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 200
+        width: 600
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e94b284cf654607a0800000000000000
+      internalID: -6411360673174735714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SS_Kit01_24
+      rect:
+        serializedVersion: 2
+        x: 1832
+        y: 0
+        width: 136
+        height: 396
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea40507e38a5f7740800000000000000
+      internalID: 5151936021298218158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SS_Kit01_25
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 0
+        width: 600
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e42e3bae991099560800000000000000
+      internalID: 7320884429846733390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5a23032c12af67641948fa25c9b9ac94
     internalID: 0
     vertices: []
     indices: 

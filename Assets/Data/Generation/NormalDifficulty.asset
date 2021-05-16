@@ -15,18 +15,118 @@ MonoBehaviour:
   _obstacleSettings:
   - Obstacle: {fileID: 5581697992792923952, guid: 5d87db578c262014296e31918ff950c6, type: 3}
     MenuSprite: {fileID: -279442341417424210, guid: 674dc6a3999de4845a48b029a1887be0, type: 3}
-    Name: Neutral
+    Name: Rock
     width: 1
     InitiallyAvailable: 1
-  - Obstacle: {fileID: 3496092333127964209, guid: 4607f86f39b3ea84b932eca89623cb76, type: 3}
-    MenuSprite: {fileID: 0}
-    Name: Slowing
+  - Obstacle: {fileID: 5581697992792923952, guid: 6559aeb59812c764895fa2a5bad3ebda, type: 3}
+    MenuSprite: {fileID: -486824488419671482, guid: 674dc6a3999de4845a48b029a1887be0, type: 3}
+    Name: Rock
+    width: 1
+    InitiallyAvailable: 0
+  - Obstacle: {fileID: 5581697992792923952, guid: d8261b2ead322b344abcc4581861548e, type: 3}
+    MenuSprite: {fileID: 1766159583090320815, guid: 674dc6a3999de4845a48b029a1887be0, type: 3}
+    Name: Rock
+    width: 1
+    InitiallyAvailable: 0
+  - Obstacle: {fileID: 5581697992792923952, guid: 27d294ea66a1bb74f91f12e1050e4626, type: 3}
+    MenuSprite: {fileID: -6688801344798280168, guid: 674dc6a3999de4845a48b029a1887be0, type: 3}
+    Name: Rock
+    width: 1
+    InitiallyAvailable: 0
+  - Obstacle: {fileID: 5581697992792923952, guid: 95e9ba3bc61accd4eb18c65945d8cd89, type: 3}
+    MenuSprite: {fileID: 6503097685474726396, guid: 674dc6a3999de4845a48b029a1887be0, type: 3}
+    Name: Rock
+    width: 1
+    InitiallyAvailable: 0
+  - Obstacle: {fileID: 5581697992792923952, guid: d2ca554f412faba4aaa038524457344f, type: 3}
+    MenuSprite: {fileID: 3128071892952839311, guid: 674dc6a3999de4845a48b029a1887be0, type: 3}
+    Name: Rock
+    width: 1
+    InitiallyAvailable: 0
+  - Obstacle: {fileID: 5581697992792923952, guid: a6af651a8011bcf4692da965fab1ae41, type: 3}
+    MenuSprite: {fileID: 1107125935284552979, guid: 674dc6a3999de4845a48b029a1887be0, type: 3}
+    Name: Rock
+    width: 1
+    InitiallyAvailable: 0
+  - Obstacle: {fileID: 5581697992792923952, guid: dc93e01f324ed9f4b8c937f746846e2f, type: 3}
+    MenuSprite: {fileID: 1159423850386242698, guid: 674dc6a3999de4845a48b029a1887be0, type: 3}
+    Name: Rock
+    width: 1
+    InitiallyAvailable: 0
+  - Obstacle: {fileID: 5581697992792923952, guid: da3b408e175a20148975daf5c32b73e9, type: 3}
+    MenuSprite: {fileID: -9152978112879291309, guid: 674dc6a3999de4845a48b029a1887be0, type: 3}
+    Name: Rock
+    width: 1
+    InitiallyAvailable: 0
+  - Obstacle: {fileID: 5581697992792923952, guid: 21c6ae78e640dec4c948c7dc0a736e61, type: 3}
+    MenuSprite: {fileID: -1782688173277919988, guid: 674dc6a3999de4845a48b029a1887be0, type: 3}
+    Name: Rock
+    width: 1
+    InitiallyAvailable: 0
+  - Obstacle: {fileID: 5581697992792923952, guid: 2f9c5cb181c05fd4398c3ebd651f4467, type: 3}
+    MenuSprite: {fileID: -4485197711711321781, guid: 674dc6a3999de4845a48b029a1887be0, type: 3}
+    Name: Rock
+    width: 1
+    InitiallyAvailable: 0
+  - Obstacle: {fileID: 5581697992792923952, guid: 9722e3b3486a74f4695d19512b53cc04, type: 3}
+    MenuSprite: {fileID: 4354499900650681859, guid: 674dc6a3999de4845a48b029a1887be0, type: 3}
+    Name: Rock
+    width: 1
+    InitiallyAvailable: 0
+  - Obstacle: {fileID: 5581697992792923952, guid: a9b797c5592ce20478b56b2a2c05a934, type: 3}
+    MenuSprite: {fileID: 6730959373296602795, guid: 674dc6a3999de4845a48b029a1887be0, type: 3}
+    Name: Table
+    width: 1
+    InitiallyAvailable: 0
+  - Obstacle: {fileID: 5581697992792923952, guid: 645562e31fbf7344f987ace4e76de27d, type: 3}
+    MenuSprite: {fileID: 8233204077153209245, guid: 674dc6a3999de4845a48b029a1887be0, type: 3}
+    Name: Chest
+    width: 1
+    InitiallyAvailable: 0
+  - Obstacle: {fileID: 5581697992792923952, guid: a8e5efb2bef15b04192faae3baf1b190, type: 3}
+    MenuSprite: {fileID: -6847144286724551874, guid: 674dc6a3999de4845a48b029a1887be0, type: 3}
+    Name: Box
+    width: 1
+    InitiallyAvailable: 0
+  - Obstacle: {fileID: 5581697992792923952, guid: aa55b01945fdb504391a13a91643d84a, type: 3}
+    MenuSprite: {fileID: 3061352316345334462, guid: 674dc6a3999de4845a48b029a1887be0, type: 3}
+    Name: Platform
+    width: 1
+    InitiallyAvailable: 0
+  - Obstacle: {fileID: 5581697992792923952, guid: 6fa00d1c62d4b99409c5eee9602ab33d, type: 3}
+    MenuSprite: {fileID: 6687242511707761103, guid: 674dc6a3999de4845a48b029a1887be0, type: 3}
+    Name: Platform
+    width: 1
+    InitiallyAvailable: 0
+  - Obstacle: {fileID: 5581697992792923952, guid: 81bbbf716bab2bd4e800fed9bea4d8a2, type: 3}
+    MenuSprite: {fileID: 1905112900774955364, guid: 674dc6a3999de4845a48b029a1887be0, type: 3}
+    Name: Barrel
+    width: 1
+    InitiallyAvailable: 0
+  - Obstacle: {fileID: 5581697992792923952, guid: 1ddc10973d1cb1e438f9d35abe902f44, type: 3}
+    MenuSprite: {fileID: -2341910114133079913, guid: 674dc6a3999de4845a48b029a1887be0, type: 3}
+    Name: Trash Can
+    width: 1
+    InitiallyAvailable: 0
+  - Obstacle: {fileID: 3496092333127964209, guid: b180ba12a93d7294f83b41dc41f735ce, type: 3}
+    MenuSprite: {fileID: 7269538870615864042, guid: c01658ce0076ff34e9b9f784455d62d9, type: 3}
+    Name: Slime
     width: 1
     InitiallyAvailable: 1
-  - Obstacle: {fileID: 7834891682423793233, guid: 74da73d0b651fc847ac5402332a028c5, type: 3}
-    MenuSprite: {fileID: 0}
-    Name: Deadly
+  - Obstacle: {fileID: 3496092333127964209, guid: 77e9a853da631b04eafa064283ac5b61, type: 3}
+    MenuSprite: {fileID: -3692134141846037576, guid: c01658ce0076ff34e9b9f784455d62d9, type: 3}
+    Name: Slime
     width: 1
-    InitiallyAvailable: 1
+    InitiallyAvailable: 0
+  - Obstacle: {fileID: 3496092333127964209, guid: 5cef7955ddaf6094899b11b3d079d597, type: 3}
+    MenuSprite: {fileID: -5509210687998616306, guid: c01658ce0076ff34e9b9f784455d62d9, type: 3}
+    Name: Web
+    width: 1
+    InitiallyAvailable: 0
+  - Obstacle: {fileID: 3496092333127964209, guid: 19733425574764444938c6312a4eb603, type: 3}
+    MenuSprite: {fileID: 7621564809282702312, guid: c01658ce0076ff34e9b9f784455d62d9, type: 3}
+    Name: Web
+    width: 1
+    InitiallyAvailable: 0
   _minObstaclesDistance: 5
   _maxObstaclesDistance: 8
