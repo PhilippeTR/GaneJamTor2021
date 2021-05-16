@@ -24,11 +24,11 @@ public class Health : MonoSubscribable<IHealthSubscriber>
         HealthPoint = MaxHealth;
     }
 
-    public void ModifyHealth(int damage)
+    public void ModifyHealth(int HealthChange)
     {
         int previousHealthPoint = HealthPoint;
-        Mathf.Clamp(HealthPoint += damage, 0, MaxHealth);
-
+        HealthPoint = Mathf.Clamp(HealthPoint + HealthChange, 0, MaxHealth);
+        Debug.Log(HealthPoint);
         if (previousHealthPoint != HealthPoint)
         {
             // Warn subscribers that health changed

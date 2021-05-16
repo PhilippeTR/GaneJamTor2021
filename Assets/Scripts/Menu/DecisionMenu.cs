@@ -47,6 +47,12 @@ public class DecisionMenu : MonoBehaviour, IHealthSubscriber
     [SerializeField]
     private ScoreManager scoreMan;
 
+    [SerializeField]
+    private Button onceMoreButton;
+
+    [SerializeField]
+    private GameObject killWall;
+
     private bool isFinish;
     private Emotion emoteSelected;
 
@@ -77,6 +83,7 @@ public class DecisionMenu : MonoBehaviour, IHealthSubscriber
     }
     private void ActivateDeath()
     {
+        //onceMoreButton.enabled = false;
         //TODO play BOOOO 
         PopUpDeath.SetActive(true);
         backgroundImg.SetActive(true);
@@ -84,6 +91,8 @@ public class DecisionMenu : MonoBehaviour, IHealthSubscriber
     }
     public void ActivateReborn() {
         //TODO play Hourra
+        Debug.Log("REBORN");
+        onceMoreButton.interactable = true;
         PopUp.SetActive(true);
         backgroundImg.SetActive(true);
         emoteSelected = Emotion.None;
@@ -101,13 +110,15 @@ public class DecisionMenu : MonoBehaviour, IHealthSubscriber
     }
 
     public void SelectEmotion(Emotion em) {
-        Debug.Log(em);
+        //Debug.Log(em);
         emoteSelected = em;
     }
 
     public void ResetGame()
 	{
         isFinish = false;
+        onceMoreButton.interactable = false;
+
         StartCoroutine(WaitAndPrint());
     }
 
@@ -132,6 +143,9 @@ public class DecisionMenu : MonoBehaviour, IHealthSubscriber
         pPlayerEmote.SetEmotion(emoteSelected);
         // suspend execution for 5 seconds
         yield return new WaitForSeconds(5);
+        killWall.SetActive(false);
+        pPlayerEmote.gameObject.transform.position = new Vector3(.0f, 5.0f, .0f);
+        killWall.SetActive(true);
         PopUp.SetActive(false);
         backgroundImg.SetActive(false);
         health.ModifyHealth(1);
