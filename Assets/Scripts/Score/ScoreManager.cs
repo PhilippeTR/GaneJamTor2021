@@ -6,7 +6,6 @@ public class ScoreManager : MonoBehaviour
 {
     public int score = 0;
 
-    //AddScore, ResetScore, GetScore
     public void AddScore(int scoreToAdd)
     {
         score += scoreToAdd;

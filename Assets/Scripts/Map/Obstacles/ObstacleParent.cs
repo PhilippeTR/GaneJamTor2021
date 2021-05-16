@@ -14,6 +14,8 @@ public abstract class ObstacleParent : MonoBehaviour
     protected ObstacleType type = ObstacleType.Neutral;
     public Sprite image;
     public float fadeSpeed = .05f;
+
+    private ScoreManager scoreManager;
     public ObstacleType GetObstacleType()
     {
         return type;
@@ -49,5 +51,10 @@ public abstract class ObstacleParent : MonoBehaviour
                 yield return null;
             }
         Destroy(gameObject);
+    }
+
+    public void SetScoreManager(ScoreManager sm)
+    {
+        scoreManager = sm;
     }
 }
