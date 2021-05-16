@@ -128,5 +128,25 @@ MonoBehaviour:
     Name: Web
     width: 1
     InitiallyAvailable: 0
+  - Obstacle: {fileID: 7834891682423793233, guid: 4f990d0094559264cb6c5ac81b499b25, type: 3}
+    MenuSprite: {fileID: 8167608359401589643, guid: c01658ce0076ff34e9b9f784455d62d9, type: 3}
+    Name: Saw
+    width: 1
+    InitiallyAvailable: 1
+  - Obstacle: {fileID: 7834891682423793233, guid: d9b351f61b4b49c46a8a039b7ae73681, type: 3}
+    MenuSprite: {fileID: -4195158134465944555, guid: c01658ce0076ff34e9b9f784455d62d9, type: 3}
+    Name: Saw
+    width: 1
+    InitiallyAvailable: 0
+  - Obstacle: {fileID: 7834891682423793233, guid: 2abf91b756e59d8429b4ba4e4b009a4d, type: 3}
+    MenuSprite: {fileID: 7320884429846733390, guid: c01658ce0076ff34e9b9f784455d62d9, type: 3}
+    Name: Spike
+    width: 1
+    InitiallyAvailable: 0
+  - Obstacle: {fileID: 7834891682423793233, guid: 2f7ed4e857cf3cd41abd0b785a0bf565, type: 3}
+    MenuSprite: {fileID: -6411360673174735714, guid: c01658ce0076ff34e9b9f784455d62d9, type: 3}
+    Name: Spike
+    width: 1
+    InitiallyAvailable: 0
   _minObstaclesDistance: 5
   _maxObstaclesDistance: 8
