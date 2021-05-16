@@ -14,6 +14,7 @@ public abstract class ObstacleParent : MonoBehaviour
     protected ObstacleType type = ObstacleType.Neutral;
     public Sprite image;
     public float fadeSpeed = 1;
+    public Collider scoreCollider;
 
     private ScoreManager scoreManager;
     public ObstacleType GetObstacleType()
@@ -65,5 +66,16 @@ public abstract class ObstacleParent : MonoBehaviour
     public void SetScoreManager(ScoreManager sm)
     {
         scoreManager = sm;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            if (scoreManager)
+            {
+                scoreManager.AddScore(10);
+            }
+        }
     }
 }
