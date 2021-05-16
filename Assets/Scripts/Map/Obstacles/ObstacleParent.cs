@@ -12,9 +12,10 @@ public enum ObstacleType
 public abstract class ObstacleParent : MonoBehaviour
 {
     protected ObstacleType type = ObstacleType.Neutral;
-    public Sprite image;
+    public SpriteRenderer spriteRenderer;
     public float fadeSpeed = 1;
     public int scoreIncrement = 10;
+    private bool DisposeTriggered = false;
 
     private ScoreManager scoreManager;
     public ObstacleType GetObstacleType()
@@ -24,6 +25,13 @@ public abstract class ObstacleParent : MonoBehaviour
 
     public void Dispose(bool noFade = false)
     {
+        if (DisposeTriggered)
+        {
+            return;
+        }
+
+        DisposeTriggered = true;
+
         //Disable collider
         Collider c = GetComponent<Collider>();
         if (c)
@@ -45,21 +53,22 @@ public abstract class ObstacleParent : MonoBehaviour
 
     private IEnumerator FadeOut()
     {
-        Renderer r = GetComponent<Renderer>();
-        Color c = r.material.color;
+        //Renderer r = GetComponent<Renderer>();
+        Color c = spriteRenderer.material.color;
         float a;
         if (c != null)
             
-            while (c.a >= 0)
-            {
-                c = r.material.color;
-                a = c.a;
-                //GetComponent<Renderer>().material.color -= (fadeSpeed * Time.deltaTime);
-                
-                r.material.color = new Color(c.r,c.g,c.b, a- fadeSpeed * Time.deltaTime);
-                Debug.Log("alpha = " + r.material.color.a);
-                yield return null;
-            }
+        while (c.a >= 0)
+        {
+            c = spriteRenderer.material.color;
+            a = c.a;
+            //GetComponent<Renderer>().material.color -= (fadeSpeed * Time.deltaTime);
+
+            spriteRenderer.material.color = new Color(c.r,c.g,c.b, a- fadeSpeed * Time.deltaTime);
+            Debug.Log("alpha = " + spriteRenderer.material.color.a);
+            yield return null;
+        }
+
         Destroy(gameObject);
     }
 
