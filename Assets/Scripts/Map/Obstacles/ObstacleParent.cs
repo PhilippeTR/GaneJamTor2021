@@ -14,7 +14,7 @@ public abstract class ObstacleParent : MonoBehaviour
     protected ObstacleType type = ObstacleType.Neutral;
     public Sprite image;
     public float fadeSpeed = 1;
-    public Collider scoreCollider;
+    public int scoreIncrement = 10;
 
     private ScoreManager scoreManager;
     public ObstacleType GetObstacleType()
@@ -68,14 +68,11 @@ public abstract class ObstacleParent : MonoBehaviour
         scoreManager = sm;
     }
 
-    private void OnTriggerExit(Collider other)
+    public void ObstaclePassed()
     {
-        if (other.CompareTag("Player"))
+        if (scoreManager)
         {
-            if (scoreManager)
-            {
-                scoreManager.AddScore(10);
-            }
+            scoreManager.AddScore(scoreIncrement);
         }
     }
 }
