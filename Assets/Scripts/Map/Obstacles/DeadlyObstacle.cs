@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class DeadlyObstacle : ObstacleParent
 {
-    void Awake()
+    /*void Awake()
     {
         type = ObstacleType.Deadly;
-    }
+    }*/
 
     private void OnTriggerEnter(Collider other)
     {

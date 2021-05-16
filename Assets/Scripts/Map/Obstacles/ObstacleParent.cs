@@ -4,14 +4,14 @@ using UnityEngine.UI;
 
 public enum ObstacleType
 {
-    Neutral,
+    Neutral = 0,
     Deadly,
     Slowing
 }
 
 public abstract class ObstacleParent : MonoBehaviour
 {
-    protected ObstacleType type = ObstacleType.Neutral;
+    public ObstacleType type = ObstacleType.Neutral;
     public SpriteRenderer spriteRenderer;
     public float fadeSpeed = 2;
     public int scoreIncrement = 10;
@@ -65,7 +65,7 @@ public abstract class ObstacleParent : MonoBehaviour
             //GetComponent<Renderer>().material.color -= (fadeSpeed * Time.deltaTime);
 
             spriteRenderer.material.color = new Color(c.r,c.g,c.b, a- fadeSpeed * Time.deltaTime);
-            Debug.Log("alpha = " + spriteRenderer.material.color.a);
+            //Debug.Log("alpha = " + spriteRenderer.material.color.a);
             yield return null;
         }
 

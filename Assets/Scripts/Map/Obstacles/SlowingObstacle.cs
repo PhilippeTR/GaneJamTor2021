@@ -4,10 +4,10 @@ public class SlowingObstacle : ObstacleParent
 {
     public float obstacleSpeed = 300f;
     private float beforeSpeed = 0f;
-    void Awake()
+    /*void Awake()
     {
         type = ObstacleType.Slowing;
-    }
+    }*/
 
     private void OnTriggerEnter(Collider other)
     {
