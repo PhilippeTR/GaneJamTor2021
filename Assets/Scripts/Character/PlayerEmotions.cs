@@ -43,7 +43,7 @@ public class PlayerEmotions : MonoBehaviour
                     ObstacleParent o = hitCollider.GetComponent<ObstacleParent>();
                     if (o)
                     {
-                        o.Dispose();
+                        o.Dispose(false);
                     }
                     //Debug.Log(hitCollider.transform.position);
                     break;
