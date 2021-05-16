@@ -63,7 +63,7 @@ public class LevelGenerator : MonoBehaviour
                 ((List<ObstacleSettings>)_obstaclesUsedNEW[obstacleType]).Add(obstacleSetting);
             }
         }
-        Debug.Log("DONE");
+
         ResetLevel();
     }
 
