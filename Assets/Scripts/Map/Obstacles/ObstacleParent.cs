@@ -13,7 +13,7 @@ public abstract class ObstacleParent : MonoBehaviour
 {
     protected ObstacleType type = ObstacleType.Neutral;
     public Sprite image;
-    public float fadeSpeed = .05f;
+    public float fadeSpeed = 1;
 
     private ScoreManager scoreManager;
     public ObstacleType GetObstacleType()
@@ -24,6 +24,11 @@ public abstract class ObstacleParent : MonoBehaviour
     public void Dispose(bool noFade = false)
     {
         //Disable collider
+        Collider c = GetComponent<Collider>();
+        if (c)
+        {
+            c.enabled = false;
+        }
         //Don't allow recalling this method
         if (noFade)
         {
@@ -34,7 +39,6 @@ public abstract class ObstacleParent : MonoBehaviour
             //Fade out, then dispose
             StartCoroutine(nameof(FadeOut));
             
-            
         }
     }
 
@@ -42,11 +46,16 @@ public abstract class ObstacleParent : MonoBehaviour
     {
         Renderer r = GetComponent<Renderer>();
         Color c = r.material.color;
+        float a;
         if (c != null)
-            //float a = c.a;
-            while (r.material.color.a >= 0)
+            
+            while (c.a >= 0)
             {
+                c = r.material.color;
+                a = c.a;
                 //GetComponent<Renderer>().material.color -= (fadeSpeed * Time.deltaTime);
+                
+                r.material.color = new Color(c.r,c.g,c.b, a- fadeSpeed * Time.deltaTime);
                 Debug.Log("alpha = " + r.material.color.a);
                 yield return null;
             }
