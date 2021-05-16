@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: NormalDifficulty
   m_EditorClassIdentifier: 
   _obstacleSettings:
-  - Obstacle: {fileID: 5581697992792923952, guid: 865f9df7a2966d245841e92b2a57f169, type: 3}
-    MenuSprite: {fileID: 0}
+  - Obstacle: {fileID: 5581697992792923952, guid: 5d87db578c262014296e31918ff950c6, type: 3}
+    MenuSprite: {fileID: -279442341417424210, guid: 674dc6a3999de4845a48b029a1887be0, type: 3}
     Name: Neutral
     width: 1
     InitiallyAvailable: 1
