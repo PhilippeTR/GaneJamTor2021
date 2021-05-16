@@ -17,6 +17,7 @@ public class CharacterMovement : MonoBehaviour
     private Inputs _currentInputs;
 
     private Rigidbody _rigidbody;
+    public Animator _animator;
 
     private void Awake()
     {
@@ -48,6 +49,9 @@ public class CharacterMovement : MonoBehaviour
         {
             velocityY = Mathf.Sqrt(-2.0f * Physics.gravity.y * _jumpHeight);
             _jumpCount++;
+            _animator.SetTrigger("Jump");
+            _animator.SetBool("InAir", true);
+
         }
 
         _rigidbody.velocity = new Vector3(velocityX, velocityY, .0f);
@@ -85,6 +89,7 @@ public class CharacterMovement : MonoBehaviour
             if (Vector3.Dot(Vector3.up, contact.normal) >= .9)
             {
                 _jumpCount = 0;
+                _animator.SetBool("InAir",false);
                 return;
             }
         }

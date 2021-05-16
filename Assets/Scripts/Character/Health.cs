@@ -19,6 +19,8 @@ public class Health : MonoSubscribable<IHealthSubscriber>
 
     public int HealthPoint { get; protected set; }
 
+    public Animator _animator;
+
     private void Awake()
     {
         HealthPoint = MaxHealth;
@@ -39,6 +41,7 @@ public class Health : MonoSubscribable<IHealthSubscriber>
 
             if (HealthPoint <= 0)
             {
+                _animator.SetTrigger("Dead");
                 // Warn subscribers that health is depleted
                 foreach (IHealthSubscriber subscriber in Subscribers)
                 {
