@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DecisionMenu : MonoBehaviour
+public class DecisionMenu : MonoBehaviour, IHealthSubscriber
 {
     [SerializeField]
     private List<Emotion> emotion;
@@ -23,7 +24,21 @@ public class DecisionMenu : MonoBehaviour
     [SerializeField]
     private LevelGenerator levelGen;
 
+    [SerializeField]
+    private int scoreMin;
+
+    [SerializeField]
+    private Health health;
+
+    [SerializeField]
+    private Image [] images;
+
+    [SerializeField]
+    private Sprite imagesDefault;
+
+    private bool isFinish;
     private Emotion emoteSelected;
+
    // Start is called before the first frame update
    void Start()
     {
@@ -32,6 +47,8 @@ public class DecisionMenu : MonoBehaviour
         emoteSelected = Emotion.None;
         levelGen.GenerateObstacles();
         levelGen.Scroll(true);
+        health.Subscribe(this);
+        isFinish = true;
     }
 
     // Update is called once per frame
@@ -47,28 +64,72 @@ public class DecisionMenu : MonoBehaviour
         }
     }
 
-    void ActivateReborn() {
+    public void ActivateReborn() {
         PopUp.SetActive(true);
         backgroundImg.SetActive(true);
         emoteSelected = Emotion.None;
+        isFinish = true;
+        for (int i = 0; i < 3; i++)
+        {
+            images[i].sprite = imagesDefault;
+        }
     }
 
-    void SelectEmotion(Emotion em) {
+    public void SelectEmotion(int a)
+    {
+        if(isFinish)
+            SelectEmotion((Emotion)a);
+    }
+
+    public void SelectEmotion(Emotion em) {
+        Debug.Log(em);
         emoteSelected = em;
     }
 
-	private void ResetGame()
+    public void ResetGame()
 	{
+        isFinish = false;
         StartCoroutine(WaitAndPrint());
     }
 
     IEnumerator WaitAndPrint()
     {
+        IEnumerable<ObstacleSettings> obstacleDif = levelGen.GetObstaclesAvailable().Except(levelGen.GetObstaclesUsed());
+        int[] obstableAdded = {-1,-1,-1 };
+        int maxSize = (3 > obstacleDif.Count()) ? obstacleDif.Count() : 3 ;
+        for (int i = 0; i < maxSize; i++) {
+            int numb = Random.Range(0, obstacleDif.Count());
+            if (!obstableAdded.Contains(numb))
+            {
+                obstableAdded[i] = numb;
+                levelGen.AddObstaclesUsed(obstacleDif.ElementAt(numb));
+                images[i].sprite = obstacleDif.ElementAt(numb).MenuSprite;
+            }
+            else 
+            {
+                i--;
+            }
+        }
         // suspend execution for 5 seconds
         yield return new WaitForSeconds(5);
+        PopUp.SetActive(false);
+        backgroundImg.SetActive(false);
+        health.ModifyHealth(1);
         levelGen.ResetLevel();
         levelGen.GenerateObstacles();
         levelGen.Scroll(true);
     }
 
+	public void NotifyHealthChange(Health healthScript, int health)
+	{
+
+	}
+
+	public void NotifyHealthDepleted(Health healthScript)
+	{
+        isFinish = true;
+        levelGen.Scroll(false);
+        levelGen.DeleteAllObstacles();
+        ActivateReborn();
+    }
 }
