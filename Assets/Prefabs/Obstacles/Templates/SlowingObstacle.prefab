@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 3706301687630734267}
-  fadeSpeed: 1
+  fadeSpeed: 2
   scoreIncrement: 10
   obstacleSpeed: 300
 --- !u!1 &5099600690811689020

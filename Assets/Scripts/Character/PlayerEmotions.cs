@@ -17,10 +17,12 @@ public class PlayerEmotions : MonoBehaviour
     private Emotion currentEmotion = Emotion.None;
 
     private CharacterMovement cm;
+    public Animator animator;
     private bool hasPunchPower = false;
     private bool canPunch = true;
 
     public float speedMultiplier = 1.5f;
+    public Vector3 sphereOverlapOffset;
     public float sphereOverlapRadius = .8f;
     public LayerMask layerMask;
 
@@ -36,7 +38,8 @@ public class PlayerEmotions : MonoBehaviour
         {
             if (hasPunchPower && canPunch)
             {
-                Collider[] hitColliders = Physics.OverlapSphere(transform.position+ Vector3.right/2, sphereOverlapRadius, layerMask);
+                animator.SetTrigger("Punch");
+                Collider[] hitColliders = Physics.OverlapSphere(transform.position + sphereOverlapOffset, sphereOverlapRadius, layerMask);
                 
                 foreach (var hitCollider in hitColliders)
                 {
@@ -120,6 +123,6 @@ public class PlayerEmotions : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawSphere(transform.position + Vector3.right/2, sphereOverlapRadius);
+        Gizmos.DrawSphere(transform.position + sphereOverlapOffset, sphereOverlapRadius);
     }
 }

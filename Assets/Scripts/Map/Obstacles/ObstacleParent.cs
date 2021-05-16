@@ -13,7 +13,7 @@ public abstract class ObstacleParent : MonoBehaviour
 {
     protected ObstacleType type = ObstacleType.Neutral;
     public SpriteRenderer spriteRenderer;
-    public float fadeSpeed = 1;
+    public float fadeSpeed = 2;
     public int scoreIncrement = 10;
     private bool DisposeTriggered = false;
 

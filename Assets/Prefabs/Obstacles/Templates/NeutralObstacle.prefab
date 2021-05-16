@@ -199,5 +199,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 963364746543321508}
-  fadeSpeed: 1
+  fadeSpeed: 2
   scoreIncrement: 10
