@@ -39,14 +39,15 @@ public class DecisionMenu : MonoBehaviour, IHealthSubscriber
     private Health health;
 
     [SerializeField]
-    private Image [] images;
+    private Image[] images;
 
     [SerializeField]
     private Sprite imagesDefault;
 
     [SerializeField]
     private ScoreManager scoreMan;
-
+    [SerializeField]
+    private AudioSource[] audioData;
     [SerializeField]
     private Button onceMoreButton;
 
@@ -83,14 +84,13 @@ public class DecisionMenu : MonoBehaviour, IHealthSubscriber
     }
     private void ActivateDeath()
     {
-        //onceMoreButton.enabled = false;
-        //TODO play BOOOO 
+        audioData[1].Play(0);
         PopUpDeath.SetActive(true);
         backgroundImg.SetActive(true);
         PopUpDeathText.text = "" + scoreMan.GetScore() + " Points!";
     }
     public void ActivateReborn() {
-        //TODO play Hourra
+        audioData[0].Play(1);
         Debug.Log("REBORN");
         onceMoreButton.interactable = true;
         PopUp.SetActive(true);
