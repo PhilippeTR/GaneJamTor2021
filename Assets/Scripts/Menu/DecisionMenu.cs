@@ -17,6 +17,11 @@ public class DecisionMenu : MonoBehaviour, IHealthSubscriber
 
     [SerializeField]
     private GameObject PopUp;
+    [SerializeField]
+    private GameObject PopUpDeath;
+
+    [SerializeField]
+    private Text PopUpDeathText;
 
     [SerializeField]
     private Button restartButton;
@@ -25,7 +30,10 @@ public class DecisionMenu : MonoBehaviour, IHealthSubscriber
     private LevelGenerator levelGen;
 
     [SerializeField]
-    private int scoreMin;
+    private PlayerEmotions pPlayerEmote;
+
+    [SerializeField]
+    public int scoreMin;
 
     [SerializeField]
     private Health health;
@@ -36,12 +44,16 @@ public class DecisionMenu : MonoBehaviour, IHealthSubscriber
     [SerializeField]
     private Sprite imagesDefault;
 
+    [SerializeField]
+    private ScoreManager scoreMan;
+
     private bool isFinish;
     private Emotion emoteSelected;
 
    // Start is called before the first frame update
    void Start()
     {
+        PopUpDeath.SetActive(false);
         PopUp.SetActive(false);
         backgroundImg.SetActive(false);
         emoteSelected = Emotion.None;
@@ -63,8 +75,15 @@ public class DecisionMenu : MonoBehaviour, IHealthSubscriber
             restartButton.enabled = true;
         }
     }
-
+    private void ActivateDeath()
+    {
+        //TODO play BOOOO 
+        PopUpDeath.SetActive(true);
+        backgroundImg.SetActive(true);
+        PopUpDeathText.text = "" + scoreMan.GetScore() + " Points!";
+    }
     public void ActivateReborn() {
+        //TODO play Hourra
         PopUp.SetActive(true);
         backgroundImg.SetActive(true);
         emoteSelected = Emotion.None;
@@ -110,6 +129,7 @@ public class DecisionMenu : MonoBehaviour, IHealthSubscriber
                 i--;
             }
         }
+        pPlayerEmote.SetEmotion(emoteSelected);
         // suspend execution for 5 seconds
         yield return new WaitForSeconds(5);
         PopUp.SetActive(false);
@@ -118,6 +138,7 @@ public class DecisionMenu : MonoBehaviour, IHealthSubscriber
         levelGen.ResetLevel();
         levelGen.GenerateObstacles();
         levelGen.Scroll(true);
+        scoreMan.score = 0;
     }
 
 	public void NotifyHealthChange(Health healthScript, int health)
@@ -127,9 +148,22 @@ public class DecisionMenu : MonoBehaviour, IHealthSubscriber
 
 	public void NotifyHealthDepleted(Health healthScript)
 	{
-        isFinish = true;
-        levelGen.Scroll(false);
-        levelGen.DeleteAllObstacles();
-        ActivateReborn();
+        int score = scoreMan.GetScore();
+        if (score < scoreMin)
+        {
+            isFinish = true;
+            levelGen.Scroll(false);
+            levelGen.DeleteAllObstacles();
+            ActivateDeath();
+        }
+        else {
+            isFinish = true;
+            levelGen.Scroll(false);
+            levelGen.DeleteAllObstacles();
+            ActivateReborn();
+        }
+
     }
+
+
 }
