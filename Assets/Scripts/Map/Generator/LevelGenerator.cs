@@ -1,6 +1,8 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class LevelGenerator : MonoBehaviour
 {
@@ -17,6 +19,7 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField]
     private float _groundOffset = 2.5f;
     private int _firstChunkIndex;
+    private Hashtable _obstaclesUsedNEW = new Hashtable();
     private List<ObstacleSettings> _obstaclesUsed = new List<ObstacleSettings>();
 
     [Header("Movement")]
@@ -45,14 +48,22 @@ public class LevelGenerator : MonoBehaviour
         }
 
         // Store initially available obstacles
-        foreach(ObstacleSettings obstacleSetting in _generationSettings.GetObstacleSettings())
+        foreach (int i in Enum.GetValues(typeof(ObstacleType)))
+        {
+            _obstaclesUsedNEW[i] = new List<ObstacleSettings>();
+        }
+
+        int obstacleType;
+
+        foreach (ObstacleSettings obstacleSetting in _generationSettings.GetObstacleSettings())
         {
             if (obstacleSetting.InitiallyAvailable)
             {
-                _obstaclesUsed.Add(obstacleSetting);
+                obstacleType = (int)obstacleSetting.Obstacle.GetComponent<ObstacleParent>().GetObstacleType();
+                ((List<ObstacleSettings>)_obstaclesUsedNEW[obstacleType]).Add(obstacleSetting);
             }
         }
-
+        Debug.Log("DONE");
         ResetLevel();
     }
 
@@ -88,6 +99,7 @@ public class LevelGenerator : MonoBehaviour
         float lastPosition = .0f;
         int randomObstacleSettingIndex;
         Transform chunk;
+        List<ObstacleSettings> obstacleSettings;
         GameObject obstacle;
 
         while (_chunkLength - lastPosition >= _generationSettings.GetMinObstaclesDistance())
@@ -101,14 +113,20 @@ public class LevelGenerator : MonoBehaviour
                 lastPosition += Random.Range(_generationSettings.GetMinObstaclesDistance(), _generationSettings.GetMaxObstaclesDistance());
             }
 
-            randomObstacleSettingIndex = Random.Range(0, _obstaclesUsed.Count);
+            // Choose a random obstacle type
+            int obstacleType = Random.Range(0, _obstaclesUsedNEW.Count);
+            obstacleSettings = (List<ObstacleSettings>)_obstaclesUsedNEW[obstacleType];
+
+            // Choose a random obstacle
+            randomObstacleSettingIndex = Random.Range(0, obstacleSettings.Count);
+
             chunk = _chunks[chunkIndex].transform;
 
-            obstacle = Instantiate(_obstaclesUsed[randomObstacleSettingIndex].Obstacle, chunk.position, chunk.rotation, chunk);
+            obstacle = Instantiate(obstacleSettings[randomObstacleSettingIndex].Obstacle, chunk.position, chunk.rotation, chunk);
             obstacle.GetComponent<ObstacleParent>().SetScoreManager(_scoreManager);
-            obstacle.transform.localPosition = transform.right * (lastPosition - _chunkLength / 2.0f/* + _obstaclesUsed[randomObstacleSettingIndex].width / 2.0f*/) + Vector3.up * _groundOffset;
+            obstacle.transform.localPosition = transform.right * (lastPosition - _chunkLength / 2.0f/* + obstacleSettings[randomObstacleSettingIndex].width / 2.0f*/) + Vector3.up * _groundOffset;
 
-            //lastPosition += _obstaclesUsed[randomObstacleSettingIndex].width;
+            //lastPosition += obstacleSettings[randomObstacleSettingIndex].width;
         }
     }
 
@@ -179,22 +197,40 @@ public class LevelGenerator : MonoBehaviour
     // Get ONLY the obstacles that are used for the generation
     public ObstacleSettings[] GetObstaclesUsed()
     {
-        return _obstaclesUsed.ToArray();
+        List<ObstacleSettings> obstacleUsed = new List<ObstacleSettings>();
+
+        foreach (int i in Enum.GetValues(typeof(ObstacleType)))
+        {
+            foreach (ObstacleSettings obstacleSetting in (List<ObstacleSettings>)_obstaclesUsedNEW[i])
+            {
+                obstacleUsed.Add(obstacleSetting);
+            }
+        }
+
+        return obstacleUsed.ToArray();
     }
 
-    public void AddObstaclesUsed(ObstacleSettings ObstacleSetting)
+    public void AddObstaclesUsed(ObstacleSettings obstacleSetting)
     {
-        if (_obstaclesUsed.IndexOf(ObstacleSetting) <= -1)
+        int obstacleType = (int)obstacleSetting.Obstacle.GetComponent<ObstacleParent>().GetObstacleType();
+        List<ObstacleSettings> obstacleSettings = (List<ObstacleSettings>)_obstaclesUsedNEW[obstacleType];
+
+        if (obstacleSettings.IndexOf(obstacleSetting) <= -1)
         {
-            _obstaclesUsed.Add(ObstacleSetting);
+            obstacleSettings.Add(obstacleSetting);
+            _obstaclesUsedNEW[obstacleType] = obstacleSettings;
         }
     }
 
-    public void RemoveObstaclesUsed(ObstacleSettings ObstacleSetting)
+    public void RemoveObstaclesUsed(ObstacleSettings obstacleSetting)
     {
-        if (_obstaclesUsed.IndexOf(ObstacleSetting) > -1)
+        int obstacleType = (int)obstacleSetting.Obstacle.GetComponent<ObstacleParent>().GetObstacleType();
+        List<ObstacleSettings> obstacleSettings = (List<ObstacleSettings>)_obstaclesUsedNEW[obstacleType];
+
+        if (obstacleSettings.IndexOf(obstacleSetting) > -1)
         {
-            _obstaclesUsed.Remove(ObstacleSetting);
+            obstacleSettings.Remove(obstacleSetting);
+            _obstaclesUsedNEW[obstacleType] = obstacleSettings;
         }
     }
 }

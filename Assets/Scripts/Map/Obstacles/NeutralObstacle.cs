@@ -1,7 +1,7 @@
 public class NeutralObstacle : ObstacleParent
 {
-    void Awake()
+    /*void Awake()
     {
         type = ObstacleType.Neutral;
-    }
+    }*/
 }
