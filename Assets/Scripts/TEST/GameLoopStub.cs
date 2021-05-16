@@ -22,4 +22,13 @@ public class GameLoopStub : MonoBehaviour
         _levelGenerator.ResetLevel();
         StartGame();
     }
+
+    // Get ALL the obstacles that could be used for generation
+    //ObstacleSettings[] _levelGenerator.GetObstaclesAvailable()
+
+    // Get ONLY the obstacles that are used for the generation
+    //ObstacleSettings[] _levelGenerator.GetObstaclesUsed()
+
+    //
+    //_levelGenerator.AddObstaclesUsed(ObstacleSettings ObstacleSetting)
 }

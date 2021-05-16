@@ -1,14 +1,23 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class LevelGenerator : MonoBehaviour
 {
-    [Header("Level")]
+    [Header("Generation")]
+    [SerializeField]
+    private GenerationSettings _generationSettings;
+    [SerializeField]
+    private ScoreManager _scoreManager;
     [SerializeField]
     private GameObject[] _chunks;
     private Rigidbody[] _chunksRigidbody;
     [SerializeField]
-    private float _chunkLength = 100.0f;
+    private float _chunkLength = 50.0f;
+    [SerializeField]
+    private float _groundOffset = 2.5f;
     private int _firstChunkIndex;
+    private List<ObstacleSettings> _obstaclesUsed = new List<ObstacleSettings>();
 
     [Header("Movement")]
     [SerializeField]
@@ -17,6 +26,11 @@ public class LevelGenerator : MonoBehaviour
 
     private void Awake()
     {
+        if (!_scoreManager)
+        {
+            Debug.LogError("No ScoreManager was given to the LevelGenerator");
+        }
+
         // Store the rigidbody of all the chunks
         _chunksRigidbody = new Rigidbody[_chunks.Length];
 
@@ -27,6 +41,15 @@ public class LevelGenerator : MonoBehaviour
             if (!_chunksRigidbody[i])
             {
                 Debug.LogError("The chunk " + _chunks[i].name + " doesn't have a rigidbody");
+            }
+        }
+
+        // Store initially available obstacles
+        foreach(ObstacleSettings obstacleSetting in _generationSettings.GetObstacleSettings())
+        {
+            if (obstacleSetting.InitiallyAvailable)
+            {
+                _obstaclesUsed.Add(obstacleSetting);
             }
         }
 
@@ -49,21 +72,37 @@ public class LevelGenerator : MonoBehaviour
     {
         int startingIndex = 0;
 
-        if (generateForFirstChunk)
+        if (!generateForFirstChunk)
         {
             startingIndex = 1;
         }
 
         for(int i = startingIndex; i < _chunks.Length; i++)
         {
-            GenerateObstacles(i);
+            GenerateObstacle(i);
         }
     }
 
-    private void GenerateObstacles(int chunkIndex)
+    private void GenerateObstacle(int chunkIndex)
     {
-        // TODO: Generate obstacles
-        Debug.Log("GenerateObstacles " + chunkIndex);
+        float lastPosition = .0f;
+        GameObject obstacle;
+
+        while (_chunkLength - lastPosition >= _generationSettings.GetMinObstaclesDistance())
+        {
+            if (_chunkLength - lastPosition < _generationSettings.GetMaxObstaclesDistance())
+            {
+                lastPosition = _chunkLength;
+            }
+            else
+            {
+                lastPosition += Random.Range(_generationSettings.GetMinObstaclesDistance(), _generationSettings.GetMaxObstaclesDistance());
+            }
+            
+            obstacle = Instantiate(_obstaclesUsed[Random.Range(0, _obstaclesUsed.Count - 1)].Obstacle, _chunks[chunkIndex].transform.position, _chunks[chunkIndex].transform.rotation, _chunks[chunkIndex].transform);
+            obstacle.GetComponent<ObstacleParent>().SetScoreManager(_scoreManager);
+            obstacle.transform.localPosition = transform.right * (lastPosition - _chunkLength / 2.0f) + Vector3.up * _groundOffset;
+        }
     }
 
     public void DeleteAllObstacles()
@@ -112,7 +151,7 @@ public class LevelGenerator : MonoBehaviour
                 _chunksRigidbody[i].transform.localPosition = transform.right * _chunkLength * 2 + transform.right * (nextPosition.x + _chunkLength);
 
                 DeleteObstacle(i);
-                GenerateObstacles(i);
+                GenerateObstacle(i);
 
                 _firstChunkIndex = (_firstChunkIndex + 1) % _chunks.Length;
             }
@@ -121,6 +160,34 @@ public class LevelGenerator : MonoBehaviour
                 // nextPosition is in local space, therefore must be converted in global space
                 _chunksRigidbody[i].MovePosition(transform.position + nextPosition);
             }
+        }
+    }
+
+    // Get ALL the obstacles that could be used for generation
+    public ObstacleSettings[] GetObstaclesAvailable()
+    {
+        return _generationSettings.GetObstacleSettings();
+    }
+
+    // Get ONLY the obstacles that are used for the generation
+    public ObstacleSettings[] GetObstaclesUsed()
+    {
+        return _obstaclesUsed.ToArray();
+    }
+
+    public void AddObstaclesUsed(ObstacleSettings ObstacleSetting)
+    {
+        if (_obstaclesUsed.IndexOf(ObstacleSetting) <= -1)
+        {
+            _obstaclesUsed.Add(ObstacleSetting);
+        }
+    }
+
+    public void RemoveObstaclesUsed(ObstacleSettings ObstacleSetting)
+    {
+        if (_obstaclesUsed.IndexOf(ObstacleSetting) > -1)
+        {
+            _obstaclesUsed.Remove(ObstacleSetting);
         }
     }
 }
